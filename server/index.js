@@ -21,13 +21,16 @@ requestify
   });
 
 app.get("/getJan2029", (req, res) => {
-  res.getJan2029(body);
+  var list = helper.getJan2029(body);
+  // res.json({ :  });
 });
 
 app.get("/getTotal", (req, res) => {
-  helper.getTotal(body);
+  var total = helper.getTotal(body);
+  res.json({ total: total });
 });
 
 app.get("/getPrecentage", (req, res) => {
-  helper.getPrecentage(body);
+  var percentage = helper.getPrecentage(body);
+  res.json({ percentage: percentage });
 });
