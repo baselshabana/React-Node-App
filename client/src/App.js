@@ -2,22 +2,25 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [mockData, setMockData] = useState([{}]);
+  const [janList, setJanList] = useState([{}]);
+  const [total, setTotal] = useState([{}]);
+  const [percentage, setPercentage] = useState([{}]);
 
   useEffect(() => {
-    fetch("https://oaosman84.github.io/statics/mock_transaction_data")
+    fetch("/getTotal")
       .then((response) => response.json())
-      .then((data) => {
-        setMockData(data);
+      .then((total) => {
+        setTotal(total);
       });
-  });
+  }, []);
+
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          
+        </div>
       </header>
     </div>
   );
