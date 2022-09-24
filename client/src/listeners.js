@@ -1,18 +1,17 @@
 import { Button } from "@material-ui/core";
 // import React, { useEffect, useState } from "react";
+// const [data, setData] = useState([{}]);
 
 const Listeners = () => {
-  // const [data, setData] = useState([{}]);
-
   const GetTotalListener = (e) => {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/getTotal", requestOptions).then(
-      (response) => response.json()
-    );
+    return fetch("http://localhost:8080/getTotal", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
   };
 
   const GetPercentageListener = (e) => {
@@ -21,9 +20,9 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/getPercentage", requestOptions).then(
-      (response) => response.json()
-    );
+    return fetch("http://localhost:8080/getPercentage", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
   };
 
   const GetJan2029listener = (e) => {
@@ -32,9 +31,9 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/getJan2029", requestOptions).then(
-      (response) => response.json()
-    );
+    return fetch("http://localhost:8080/getJan2029", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
   };
 
   const ShowListListener = (e) => {
@@ -43,9 +42,9 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/showList", requestOptions).then(
-      (response) => response.json()
-    );
+    return fetch("http://localhost:8080/showList", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
   };
 
   const MarkTransactionListener = (e) => {
@@ -54,9 +53,9 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/markTransaction", requestOptions).then(
-      (response) => response.json()
-    );
+    return fetch("http://localhost:8080/markTransaction", requestOptions)
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
   };
 
   return (

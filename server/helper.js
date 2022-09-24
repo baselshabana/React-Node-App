@@ -18,7 +18,7 @@ function setBAFlag(body) {
   var list = tolist(body);
 
   //loop for every object in the list
-  //if merchant_name = "JB company" --> set flag true
+  //if merchant_name = "JB's company" --> set flag true
   // else --> set flag false
   for (let i = 0; i < list.length; i++) {
     if (
@@ -103,7 +103,7 @@ function getJan2029(body) {
 
 /**
  *this function takes the response body as a whole and
- *params: response body, merchant_name
+ *params: response body, merchant_name to be marked/unmarked
  *returns: updated list of transactions
  */
 function markTransaction(body, merchantName) {
