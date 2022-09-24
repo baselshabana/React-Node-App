@@ -34,14 +34,14 @@ requestify
 app.get("/showList", (req, res) => {
   var list = helper.setBAFlag(body);
   res.json({ result: list });
-  console.log(list);
+  // console.log(list);
 });
 
 //to get Ahmed JB affiliated transactions' total amount as a value
 app.get("/getTotal", (req, res) => {
   var total = helper.getTotal(body);
   res.json({ result: total });
-  console.log(total);
+  // console.log(total);
 });
 
 //to get Ahmed JB affiliated transactions' total amount as a percentage of the total
@@ -51,12 +51,20 @@ app.get("/getPercentage", (req, res) => {
   //round "percentage" to 2 decimal places
   percentage = percentage.toFixed(2);
   res.json({ result: percentage + "%" });
-  console.log(percentage);
+  // console.log(percentage);
 });
 
 //to get Ahmed's transactions for Jan2029
 app.get("/getJan2029", (req, res) => {
   var list = helper.getJan2029(body);
   res.json({ result: list });
-  console.log(list);
+  // console.log(list);
+});
+
+//to mark/unmark any transaction as being Bezos-related
+app.get("/markTransaction", (req, res) => {
+  var merchantName = req.query.merchantName;
+  var list = helper.markTransaction(body, merchantName);
+  res.json({ result: list });
+  // console.log(list);
 });

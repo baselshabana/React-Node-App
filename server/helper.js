@@ -101,4 +101,45 @@ function getJan2029(body) {
   return result;
 }
 
-module.exports = { getJan2029, getTotal, getPercentage, setBAFlag };
+/**
+ *this function takes the response body as a whole and
+ *params: response body, merchant_name
+ *returns: updated list of transactions
+ */
+function markTransaction(body, merchantName) {
+  var list = setBAFlag(body);
+  var unMark = false;
+
+  //for loop to unmark
+  for (let i = 0; i < list.length; i++) {
+    if (
+      list[i].merchant_name == merchantName &&
+      list[i].bezosAffiliated == true
+    ) {
+      list[i].bezosAffiliated = false;
+      unMark = true;
+    }
+  }
+
+  //if called for unmark --> skip marking
+  if (unMark) {
+    return list;
+  } else {
+    //for loop to mark
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].merchant_name == merchantName) {
+        list[i].bezosAffiliated = true;
+      }
+    }
+  }
+
+  return list;
+}
+
+module.exports = {
+  getJan2029,
+  getTotal,
+  getPercentage,
+  setBAFlag,
+  markTransaction,
+};
