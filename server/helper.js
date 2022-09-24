@@ -10,22 +10,6 @@ function tolist(body) {
 }
 
 /**
- *this function takes the response body as a whole and returns a list of Ahmed transations in Jan 2029 ordered by date
- *params: response body
- *returns: an ordered list
- */
-function getJan2029(body) {
-  var result = [];
-  var list = tolist(body);
-
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].date == "Amazon") {
-    }
-  }
-  return result;
-}
-
-/**
  *this function takes the response body as a whole, coverts it to a list, add & initialize a boolean flag for each element in the list
  *params: response body
  *returns: a list with a new boolean flag bezosAffiliated
@@ -92,6 +76,29 @@ function getPercentage(body) {
 
   //percentage = total / grandTotal * 100
   return (total / grandTotal) * 100;
+}
+
+/**
+ *this function takes the response body as a whole and returns a list of Ahmed transations in Jan 2029 ordered by date
+ *params: response body
+ *returns: an ordered list
+ */
+function getJan2029(body) {
+  var list = tolist(body);
+  var result = [];
+
+  for (let i = 0; i < list.length; i++) {
+    var tempDate = list[i].date;
+    if (
+      tempDate[2] == "2" &&
+      tempDate[3] == "9" &&
+      tempDate[5] == "0" &&
+      tempDate[6] == "1"
+    ) {
+      result[i] = list[i];
+    }
+  }
+  return result;
 }
 
 module.exports = { getJan2029, getTotal, getPercentage, setBAFlag };

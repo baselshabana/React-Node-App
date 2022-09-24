@@ -11,7 +11,6 @@ const Listeners = () => {
       fetch("/getTotal")
         .then((response) => response.json())
         .then((data) => setData(data));
-      // .then(JSON.stringify(data.result));
     }, []);
   };
 
@@ -22,7 +21,6 @@ const Listeners = () => {
       fetch("/getPercentage")
         .then((response) => response.json())
         .then((data) => setData(data));
-      // .then(JSON.stringify(data.result));
     }, []);
   };
 
@@ -48,8 +46,6 @@ const Listeners = () => {
 
   return (
     <div>
-      <p>{JSON.stringify(data.result)}</p>
-
       <Button
         variant="contained"
         color="primary"
@@ -80,7 +76,7 @@ const Listeners = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={GetJan2029listener}
+        onClick={ShowList}
         fullWidth
       >
         show_List

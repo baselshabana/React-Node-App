@@ -29,9 +29,10 @@ requestify
 //APIs
 ////////////////////////////////////////////////////////////////////////////////////
 
-//to get Ahmed's transactions for Jan2029
-app.get("/getJan2029", (req, res) => {
-  var list = helper.getJan2029(body);
+//to get Ahmed's transactions list after adding the boolean flag
+//this is allow Ahmed to visually discern which transactions are to known Bezos-related companies
+app.get("/showList", (req, res) => {
+  var list = helper.setBAFlag(body);
   res.json({ result: list });
   console.log(list);
 });
@@ -53,9 +54,9 @@ app.get("/getPercentage", (req, res) => {
   console.log(percentage);
 });
 
-//to get Ahmed's transactions list after adding the boolean flag
-app.get("/showList", (req, res) => {
-  var list = helper.setBAFlag(body);
+//to get Ahmed's transactions for Jan2029
+app.get("/getJan2029", (req, res) => {
+  var list = helper.getJan2029(body);
   res.json({ result: list });
   console.log(list);
 });
