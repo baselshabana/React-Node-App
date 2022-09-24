@@ -30,10 +30,13 @@ markTransaction
 #Project outline:
 
 /server:
+
 index.js -> backend logic (nodejs + express)
+
 helper.js -> helper functions for the api's
 
 /client:
-index.js -> the route to the component contains the buttons
-listeners.js -> have the buttons and the listeners to call the backend api's
 
+index.js -> the route to the component contains the buttons
+
+listeners.js -> have the buttons and the listeners to call the backend api's
