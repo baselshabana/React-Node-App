@@ -29,17 +29,33 @@ requestify
 //APIs
 ////////////////////////////////////////////////////////////////////////////////////
 
+//to get Ahmed's transactions for Jan2029
 app.get("/getJan2029", (req, res) => {
   var list = helper.getJan2029(body);
-  res.json({ list: list });
+  res.json({ result: list });
+  console.log(list);
 });
 
+//to get Ahmed JB affiliated transactions' total amount as a value
 app.get("/getTotal", (req, res) => {
   var total = helper.getTotal(body);
-  res.json({ total: total });
+  res.json({ result: total });
+  console.log(total);
 });
 
+//to get Ahmed JB affiliated transactions' total amount as a percentage of the total
 app.get("/getPercentage", (req, res) => {
   var percentage = helper.getPercentage(body);
-  res.json({ percentage: percentage });
+
+  //round "percentage" to 2 decimal places
+  percentage = percentage.toFixed(2);
+  res.json({ result: percentage + "%" });
+  console.log(percentage);
+});
+
+//to get Ahmed's transactions list after adding the boolean flag
+app.get("/showList", (req, res) => {
+  var list = helper.setBAFlag(body);
+  res.json({ result: list });
+  console.log(list);
 });

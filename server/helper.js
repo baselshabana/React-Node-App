@@ -1,6 +1,15 @@
 /* helpler functions for the backend* /
 
 /**
+ *this helper function takes the response body as a whole, and returns it as an array of JSON
+ *params: response body
+ *returns: an array of JSON
+ */
+function tolist(body) {
+  return JSON.parse(body);
+}
+
+/**
  *this function takes the response body as a whole and returns a list of Ahmed transations in Jan 2029 ordered by date
  *params: response body
  *returns: an ordered list
@@ -17,16 +26,7 @@ function getJan2029(body) {
 }
 
 /**
- *this helper function takes the response body as a whole, and returns it as an array of JSON
- *params: response body
- *returns: an array of JSON
- */
-function tolist(body) {
-  return JSON.parse(body);
-}
-
-/**
- *this helper function takes the response body as a whole, coverts it to a list, add & initialize a boolean flag for each element in the list
+ *this function takes the response body as a whole, coverts it to a list, add & initialize a boolean flag for each element in the list
  *params: response body
  *returns: a list with a new boolean flag bezosAffiliated
  */
@@ -94,4 +94,4 @@ function getPercentage(body) {
   return (total / grandTotal) * 100;
 }
 
-module.exports = { getJan2029, getTotal, getPercentage };
+module.exports = { getJan2029, getTotal, getPercentage, setBAFlag };
