@@ -106,7 +106,7 @@ function getJan2029(body) {
  *params: response body, merchant_name to be marked/unmarked
  *returns: updated list of transactions
  */
-function markTransaction(body, merchantName) {
+function markCompany(body, merchantName) {
   var list = setBAFlag(body);
   var unMark = false;
 
@@ -141,5 +141,5 @@ module.exports = {
   getTotal,
   getPercentage,
   setBAFlag,
-  markTransaction,
+  markCompany,
 };

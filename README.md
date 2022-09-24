@@ -12,8 +12,8 @@ Kindly note that this is not the final version of the project. However, because 
 getTotal, 
 getPercentage, 
 getJan2029, 
-showList, 
-markTransaction 
+getList, 
+markCompany
 
 -creating 5 buttons and listeners to call the api's from the client
 

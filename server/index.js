@@ -32,7 +32,7 @@ requestify
 
 //to get Ahmed's transactions list after adding the boolean flag
 //this is allow Ahmed to visually discern which transactions are to known Bezos-related companies
-app.get("/showList", (req, res) => {
+app.get("/getList", (req, res) => {
   var list = helper.setBAFlag(body);
   res.json({ result: list });
   // console.log(list);
@@ -63,9 +63,9 @@ app.get("/getJan2029", (req, res) => {
 });
 
 //to mark/unmark any transaction as being Bezos-related
-app.get("/markTransaction", (req, res) => {
+app.get("/markCompany", (req, res) => {
   var merchantName = req.query.merchantName;
-  var list = helper.markTransaction(body, merchantName);
+  var list = helper.markCompany(body, merchantName);
   res.json({ result: list });
   // console.log(list);
 });

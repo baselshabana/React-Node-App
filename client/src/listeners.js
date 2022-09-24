@@ -40,7 +40,7 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/showList", requestOptions)
+    return fetch("http://localhost:8080/getList", requestOptions)
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
   };
@@ -51,7 +51,7 @@ const Listeners = () => {
       redirect: "follow",
     };
 
-    return fetch("http://localhost:8080/markTransaction", requestOptions)
+    return fetch("http://localhost:8080/markCompany", requestOptions)
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
   };
