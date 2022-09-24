@@ -1,6 +1,4 @@
 import { Button } from "@material-ui/core";
-// import React, { useEffect, useState } from "react";
-// const [data, setData] = useState([{}]);
 
 const Listeners = () => {
   const GetTotalListener = (e) => {
