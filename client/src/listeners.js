@@ -1,47 +1,62 @@
 import { Button } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
 const Listeners = () => {
-  const [data, setData] = useState([{}]);
+  // const [data, setData] = useState([{}]);
 
   const GetTotalListener = (e) => {
-    // const [data, setData] = useState([{}]);
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-    useEffect(() => {
-      fetch("/getTotal")
-        .then((response) => response.json())
-        .then((data) => setData(data));
-    }, []);
+    return fetch("http://localhost:8080/getTotal", requestOptions).then(
+      (response) => response.json()
+    );
   };
 
   const GetPercentageListener = (e) => {
-    // const [data, setData] = useState([{}]);
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-    useEffect(() => {
-      fetch("/getPercentage")
-        .then((response) => response.json())
-        .then((data) => setData(data));
-    }, []);
+    return fetch("http://localhost:8080/getPercentage", requestOptions).then(
+      (response) => response.json()
+    );
   };
 
   const GetJan2029listener = (e) => {
-    // const [data, setData] = useState([{}]);
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-    useEffect(() => {
-      fetch("/getJan2029")
-        .then((response) => response.json())
-        .then((data) => setData(data));
-    }, []);
+    return fetch("http://localhost:8080/getJan2029", requestOptions).then(
+      (response) => response.json()
+    );
   };
 
-  const ShowList = (e) => {
-    // const [data, setData] = useState([{}]);
+  const ShowListListener = (e) => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-    useEffect(() => {
-      fetch("/showList")
-        .then((response) => response.json())
-        .then((data) => setData(data));
-    }, []);
+    return fetch("http://localhost:8080/showList", requestOptions).then(
+      (response) => response.json()
+    );
+  };
+
+  const MarkTransactionListener = (e) => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    return fetch("http://localhost:8080/markTransaction", requestOptions).then(
+      (response) => response.json()
+    );
   };
 
   return (
@@ -76,10 +91,19 @@ const Listeners = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={ShowList}
+        onClick={ShowListListener}
         fullWidth
       >
         show_List
+      </Button>
+
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={MarkTransactionListener}
+        fullWidth
+      >
+        Mark/Unmark
       </Button>
     </div>
   );
